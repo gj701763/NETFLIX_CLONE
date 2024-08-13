@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: #E50914;
+}
+
+.floating-label {
+    position: relative;
+}
+
+.floating-label input {
+    padding-top: 1.25rem;
+    /* Adjust based on label size */
+}
+
+.floating-label label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.5rem;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.floating-label input:focus+label,
+.floating-label input:not(:placeholder-shown)+label {
+    top: -0.5rem;
+    left: 0;
+    font-size: 0.75rem;
+}
+
+
+
+@layer base {
+    .footer-tag {
+        @apply underline leading-10 opacity-70 cursor-pointer text-sm hover:opacity-90
+    }
+
+    .contain {
+        @apply flex flex-col lg:flex-row bg-black mt-2 px-10
+    }
+
+    .list {
+        @apply px-5 rounded-sm bg-neutral-800 opacity-75 hover:opacity-100 flex items-center justify-between h-20 cursor-pointer
+    }
+
+    .list-dd {
+        @apply px-5 rounded-sm bg-neutral-800 py-3 mt-2 mb-3 text-lg font-light items-start
+    }
+
+    .list-p {
+        @apply text-2xl font-semibold text-white text-start
+    }
+}
